@@ -8,7 +8,8 @@ function createWindow () {
       nodeIntegration: true
     }
   });
-  win.loadFile('public/index.html')
+  // win.loadFile('public/index.html')
+  win.loadURL('http://localhost:1234');
 }
 
 app.on('ready', createWindow);

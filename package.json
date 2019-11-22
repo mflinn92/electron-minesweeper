@@ -6,12 +6,13 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "electron .",
-    "server": "node server/index.js"
+    "server": "nodemon server/index.js"
   },
   "author": "Mike Flinn",
   "license": "ISC",
   "devDependencies": {
     "electron": "^7.1.2",
+    "nodemon": "^2.0.0",
     "webapack": "^1.0.0",
     "webpack-cli": "^3.3.10"
   },

@@ -6,7 +6,7 @@ const GridRow = ({ rowData, rowIdx }) => {
     <div className="row">
       {
         rowData.map((cell, i) => {
-          return <Cell value={i} position={[rowIdx, i]} key={i} />
+          return <Cell val={cell} position={[rowIdx, i]} key={i} />
         })
       }
     </div>

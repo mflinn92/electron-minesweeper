@@ -1,0 +1,23 @@
+{
+  "name": "minesweeper",
+  "version": "1.0.0",
+  "description": "electron minesweeper",
+  "main": "src/electron.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron .",
+    "server": "node server/index.js"
+  },
+  "author": "Mike Flinn",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^7.1.2",
+    "webapack": "^1.0.0",
+    "webpack-cli": "^3.3.10"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
+  }
+}

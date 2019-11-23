@@ -13,6 +13,8 @@ class App extends React.Component {
       bombLocations: [],
     }
     this.placeBombs = this.placeBombs.bind(this);
+    this.touchedBombs = this.touchedBombs.bind(this);
+    this.addtouchedBombs = this.addtouchedBombs.bind(this);
   }
   
   getRandomInt(min, max) {
@@ -34,9 +36,36 @@ class App extends React.Component {
     bombs.forEach((position) => {
       newGrid[position[0]][position[1]] = -1;
     });
+    this.addtouchedBombs(newGrid);
     this.setState({
       grid: newGrid,
     })
+  }
+
+  touchedBombs(row, col, board) {
+    let bombCount = 0;
+    for (let i = row-1; i < row + 2; i++) {
+      if (i >= 0 && i < board.length) {
+        for (let j = col - 1; j < col + 2; j++) {
+          if (j >= 0 && j < board.length) {
+            if (!(i === row && j === col) && board[i][j] === -1) {
+              bombCount++;
+            }
+          }
+        }
+      }
+    }
+    return bombCount;
+  }
+
+  addtouchedBombs(grid) {
+    for (let row = 0; row < grid.length; row++) {
+      for (let col = 0; col < grid.length; col++) {
+        if (grid[row][col] !== -1) {
+          grid[row][col] = this.touchedBombs(row, col, grid)
+        }
+      }
+    }
   }
   
   componentDidMount() {

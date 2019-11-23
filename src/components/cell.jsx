@@ -15,7 +15,7 @@ class Cell extends React.Component {
 
   render() {
     return (
-      <button onClick={this.clickHandler}>{this.state.position}</button>
+      <button onClick={this.clickHandler}>{this.props.val}</button>
     )
   }
 }

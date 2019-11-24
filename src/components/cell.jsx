@@ -10,7 +10,7 @@ class Cell extends React.Component {
     this.clickHandler = this.clickHandler.bind(this);
   }
 
-  clickHandler() {
+  clickHandler(event) {
     this.setState({
       clicked: true
     });

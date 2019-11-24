@@ -5,17 +5,20 @@ class Cell extends React.Component {
     super(props);
     this.state = {
       position: props.position,
+      clicked: false,
     }
     this.clickHandler = this.clickHandler.bind(this);
   }
 
   clickHandler() {
-    console.log(this.state.position[0], this.state.position[1]);
+    this.setState({
+      clicked: true
+    });
   }
 
   render() {
     return (
-      <button onClick={this.clickHandler}>{this.props.val}</button>
+      <button onClick={this.clickHandler}>{this.state.clicked ? this.props.val : ' '}</button>
     )
   }
 }
